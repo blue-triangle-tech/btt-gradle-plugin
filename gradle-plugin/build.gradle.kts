@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.blue-triangle-tech"
-version = "1.0.1"
+version = "1.0.2"
 
 gradlePlugin {
     plugins {
