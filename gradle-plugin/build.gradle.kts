@@ -16,6 +16,16 @@ gradlePlugin {
     }
 }
 
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+kotlin {
+    jvmToolchain(11)
+}
+
 repositories {
     mavenCentral()
     google() // optional but good to keep
