@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.blue-triangle-tech"
-version = "2.19.5"
+version = "1.0.1"
 
 gradlePlugin {
     plugins {
@@ -24,14 +24,12 @@ dependencies {
     implementation(kotlin("stdlib"))
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("release") {
-            groupId = "com.github.blue-triangle-tech"
-            artifactId = "btt-gradle-plugin"
-            version = "2.19.5"
-
-            from(components["java"])
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["java"])
+            }
         }
     }
 }
