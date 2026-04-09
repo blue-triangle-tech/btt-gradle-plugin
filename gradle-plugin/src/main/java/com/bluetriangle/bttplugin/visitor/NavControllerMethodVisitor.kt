@@ -13,11 +13,13 @@ class NavControllerMethodVisitor(
     descriptor: String
 ) : AdviceAdapter(api, methodVisitor, access, name, descriptor) {
 
-    override fun onMethodEnter() {
-        val replacementOwner = "com.bluetriangle.analytics.compose.ComposeKt"
+    override fun onMethodExit(opcode: Int) {
+        val replacementOwner = "Lcom/bluetriangle/analytics/compose/ComposeKt;"
         val replacementName = "withBttNavigationTracker"
-        val replacementDescriptor = "(Landroidx/navigation/NavController;Landroidx/compose/runtime/Composer;I)Landroidx/navigation/NavController"
+        val replacementDescriptor = "(Landroidx/navigation/NavHostController;Landroidx/compose/runtime/Composer;I)Landroidx/navigation/NavHostController;"
 
+        loadArg(1)
+        loadArg(2)
         invokeStatic(
             Type.getType(replacementOwner),
             Method(
@@ -25,5 +27,6 @@ class NavControllerMethodVisitor(
                 replacementDescriptor
             )
         )
+        super.onMethodExit(opcode)
     }
 }
