@@ -32,6 +32,9 @@ repositories {
 }
 dependencies {
     implementation(kotlin("stdlib"))
+    implementation("com.android.tools.build:gradle:8.4.0") // match your AGP
+    implementation("org.ow2.asm:asm-util:9.6")
+    implementation("org.ow2.asm:asm-commons:9.6")
 }
 
 afterEvaluate {

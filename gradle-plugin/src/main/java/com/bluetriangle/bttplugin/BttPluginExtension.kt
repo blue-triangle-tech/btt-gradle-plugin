@@ -7,5 +7,6 @@ import javax.inject.Inject
 open class BttPluginExtension @Inject constructor(objects: ObjectFactory) {
 
     val composeNavigationInjectionEnabled: Property<Boolean> =
-        objects.property(Boolean::class.java).convention(true)
+        objects.property(Boolean::class.java)
+            .convention(true)
 }
