@@ -1,9 +1,11 @@
-package com.bluetriangle.bttplugin.visitor
+package com.bluetriangle.bttplugin.instrumentations
 
 import com.android.build.api.instrumentation.AsmClassVisitorFactory
 import com.android.build.api.instrumentation.ClassContext
 import com.android.build.api.instrumentation.ClassData
 import com.android.build.api.instrumentation.InstrumentationParameters
+import com.bluetriangle.bttplugin.instrumentations.compose.navcontroller.NavControllerClassInstrumentation
+import com.bluetriangle.bttplugin.instrumentations.compose.navdisplay.NavDisplayInstrumentation
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.objectweb.asm.ClassVisitor
@@ -14,9 +16,10 @@ interface ByteCodeManipulationParameters: InstrumentationParameters {
 
 abstract class BttClassVisitorFactory: AsmClassVisitorFactory<ByteCodeManipulationParameters> {
 
-    private fun getInstrumentations() = listOf<BttClassInstrumentation>(
-            NavControllerClassInstrumentation()
-        )
+    private fun getInstrumentations() = listOf(
+        NavControllerClassInstrumentation(),
+        NavDisplayInstrumentation()
+    )
 
     override fun createClassVisitor(
         classContext: ClassContext,

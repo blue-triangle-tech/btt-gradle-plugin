@@ -1,6 +1,8 @@
-package com.bluetriangle.bttplugin.visitor
+package com.bluetriangle.bttplugin.instrumentations.compose.navcontroller
 
 import com.android.build.api.instrumentation.ClassContext
+import com.bluetriangle.bttplugin.instrumentations.BttClassInstrumentation
+import com.bluetriangle.bttplugin.instrumentations.ByteCodeManipulationParameters
 import org.objectweb.asm.ClassVisitor
 
 class NavControllerClassInstrumentation :

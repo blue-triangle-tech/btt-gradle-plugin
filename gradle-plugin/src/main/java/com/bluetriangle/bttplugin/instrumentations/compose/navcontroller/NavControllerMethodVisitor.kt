@@ -1,4 +1,4 @@
-package com.bluetriangle.bttplugin.visitor
+package com.bluetriangle.bttplugin.instrumentations.compose.navcontroller
 
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Type

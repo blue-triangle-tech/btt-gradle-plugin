@@ -26,3 +26,4 @@ dependencyResolutionManagement {
 rootProject.name = "btt-gradle-plugin"
 include(":app")
 includeBuild("gradle-plugin")
+include(":navigation3app")

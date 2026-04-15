@@ -1,4 +1,4 @@
-package com.bluetriangle.bttplugin.visitor
+package com.bluetriangle.bttplugin.instrumentations
 
 import com.android.build.api.instrumentation.ClassContext
 import org.objectweb.asm.ClassVisitor

@@ -39,7 +39,9 @@ class MainActivity : ComponentActivity() {
 
             BttgradlepluginTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    NavHost(navController, startDestination = ScreenOneDestination) {
+                    NavHost(navController,
+                        modifier = Modifier.padding(innerPadding),
+                        startDestination = ScreenOneDestination) {
                         composable<ScreenOneDestination> {
                             ScreenOne(navController)
                         }

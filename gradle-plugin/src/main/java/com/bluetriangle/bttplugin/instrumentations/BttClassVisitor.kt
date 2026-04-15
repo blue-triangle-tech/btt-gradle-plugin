@@ -1,4 +1,4 @@
-package com.bluetriangle.bttplugin.visitor
+package com.bluetriangle.bttplugin.instrumentations
 
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.Opcodes
